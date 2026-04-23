@@ -32,12 +32,42 @@ T6/
     └── TreeIsomorphism.java
 ```
 
+
 ## Compilacao
 
-No diretorio `src`, execute:
+Execute o comando a seguir para entrar no diretório /src:
 
 ```bash
-javac Main.java TreeIsomorphism.java Graph.java Bag.java Stack.java In.java StdIn.java StdOut.java
+cd src
+```
+
+Execute (no src) o comando a seguir para compilar o código:
+
+```bash
+javac -d ../out *.java
+```
+
+## Execucao
+
+Comando para executar o programa com a entrada oficial:
+
+```bash
+java -cp ../out Main ../dados/brasil.txt
+```
+
+
+## Compilacao
+
+Execute o comando a seguir para entrar no diretório /src:
+
+```bash
+cd src
+```
+
+Execute (no src) o comando a seguir para compilar o código:
+
+```bash
+javac -d ../out *.java
 ```
 
 ## Execucao
@@ -45,11 +75,17 @@ javac Main.java TreeIsomorphism.java Graph.java Bag.java Stack.java In.java StdI
 Fixtures de teste:
 
 ```bash
-java Main ../dados/iso-path4-a.txt ../dados/iso-path4-b.txt
-java Main ../dados/nao-iso-path5.txt ../dados/nao-iso-estrela5.txt
-java Main ../dados/unico-centro-a.txt ../dados/unico-centro-b.txt
-java Main ../dados/invalid-ciclo3.txt ../dados/iso-path4-a.txt
+java -cp ../out Main ../dados/iso-path4-a.txt ../dados/iso-path4-b.txt
+java -cp ../out Main ../dados/nao-iso-path5.txt ../dados/nao-iso-estrela5.txt
+java -cp ../out Main ../dados/unico-centro-a.txt ../dados/unico-centro-b.txt
+java -cp ../out Main ../dados/invalid-ciclo3.txt ../dados/iso-path4-a.txt
 ```
+
+> **Obs. (PowerShell):** Caso os acentos e caracteres especiais não apareçam corretamente no terminal, execute o comando abaixo antes de rodar o programa para forçar o encoding UTF-8:
+> ```bash
+> [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+> ```
+
 
 ## Video
 
