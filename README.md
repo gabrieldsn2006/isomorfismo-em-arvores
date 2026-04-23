@@ -49,29 +49,6 @@ javac -d ../out *.java
 
 ## Execucao
 
-Comando para executar o programa com a entrada oficial:
-
-```bash
-java -cp ../out Main ../dados/brasil.txt
-```
-
-
-## Compilacao
-
-Execute o comando a seguir para entrar no diretório /src:
-
-```bash
-cd src
-```
-
-Execute (no src) o comando a seguir para compilar o código:
-
-```bash
-javac -d ../out *.java
-```
-
-## Execucao
-
 Fixtures de teste:
 
 ```bash
