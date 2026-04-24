@@ -3,12 +3,17 @@
 Implementacao em **Java** da base inicial do Trabalho Pratico 6 da disciplina
 **Resolucao de Problemas com Grafos**.
 
+## Video
+
+Link do video explicativo: https://www.youtube.com/watch?v=f9UwGXu4_yQ
+
 ## Estrutura
 
 ```text
 T6/
 ├── README.md
 ├── T6.md
+├── youtube_vides.md
 ├── dados/
 │   ├── invalid-ciclo3.txt
 │   ├── iso-path4-a.txt
@@ -17,10 +22,6 @@ T6/
 │   ├── nao-iso-path5.txt
 │   ├── unico-centro-a.txt
 │   └── unico-centro-b.txt
-├── imgs/
-│   └── UNIFOR_logo1b.png
-├── refs/
-│   └── youtube_vides.md
 └── src/
     ├── Bag.java
     ├── Graph.java
@@ -32,12 +33,19 @@ T6/
     └── TreeIsomorphism.java
 ```
 
+
 ## Compilacao
 
-No diretorio `src`, execute:
+Execute o comando a seguir para entrar no diretório /src:
 
 ```bash
-javac Main.java TreeIsomorphism.java Graph.java Bag.java Stack.java In.java StdIn.java StdOut.java
+cd src
+```
+
+Execute (no src) o comando a seguir para compilar o código:
+
+```bash
+javac -d ../out *.java
 ```
 
 ## Execucao
@@ -45,12 +53,19 @@ javac Main.java TreeIsomorphism.java Graph.java Bag.java Stack.java In.java StdI
 Fixtures de teste:
 
 ```bash
-java Main ../dados/iso-path4-a.txt ../dados/iso-path4-b.txt
-java Main ../dados/nao-iso-path5.txt ../dados/nao-iso-estrela5.txt
-java Main ../dados/unico-centro-a.txt ../dados/unico-centro-b.txt
-java Main ../dados/invalid-ciclo3.txt ../dados/iso-path4-a.txt
+java -cp ../out Main ../dados/iso-path4-a.txt ../dados/iso-path4-b.txt
+```
+```bash
+java -cp ../out Main ../dados/nao-iso-path5.txt ../dados/nao-iso-estrela5.txt
+```
+```bash
+java -cp ../out Main ../dados/unico-centro-a.txt ../dados/unico-centro-b.txt
+```
+```bash
+java -cp ../out Main ../dados/invalid-ciclo3.txt ../dados/iso-path4-a.txt
 ```
 
-## Video
-
-Link do video explicativo: PREENCHER
+> **Obs. (PowerShell):** Caso os acentos e caracteres especiais não apareçam corretamente no terminal, execute o comando abaixo antes de rodar o programa para forçar o encoding UTF-8:
+> ```bash
+> [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+> ```
