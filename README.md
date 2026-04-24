@@ -3,12 +3,17 @@
 Implementacao em **Java** da base inicial do Trabalho Pratico 6 da disciplina
 **Resolucao de Problemas com Grafos**.
 
+## Video
+
+Link do video explicativo: https://www.youtube.com/watch?v=f9UwGXu4_yQ
+
 ## Estrutura
 
 ```text
 T6/
 ├── README.md
 ├── T6.md
+├── youtube_vides.md
 ├── dados/
 │   ├── invalid-ciclo3.txt
 │   ├── iso-path4-a.txt
@@ -17,10 +22,6 @@ T6/
 │   ├── nao-iso-path5.txt
 │   ├── unico-centro-a.txt
 │   └── unico-centro-b.txt
-├── imgs/
-│   └── UNIFOR_logo1b.png
-├── refs/
-│   └── youtube_vides.md
 └── src/
     ├── Bag.java
     ├── Graph.java
@@ -53,8 +54,14 @@ Fixtures de teste:
 
 ```bash
 java -cp ../out Main ../dados/iso-path4-a.txt ../dados/iso-path4-b.txt
+```
+```bash
 java -cp ../out Main ../dados/nao-iso-path5.txt ../dados/nao-iso-estrela5.txt
+```
+```bash
 java -cp ../out Main ../dados/unico-centro-a.txt ../dados/unico-centro-b.txt
+```
+```bash
 java -cp ../out Main ../dados/invalid-ciclo3.txt ../dados/iso-path4-a.txt
 ```
 
@@ -62,8 +69,3 @@ java -cp ../out Main ../dados/invalid-ciclo3.txt ../dados/iso-path4-a.txt
 > ```bash
 > [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 > ```
-
-
-## Video
-
-Link do video explicativo: PREENCHER

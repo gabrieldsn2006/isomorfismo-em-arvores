@@ -221,7 +221,7 @@ public class TreeIsomorphism {
         int[] degree = new int[V];
         List<Integer> leaves = new ArrayList<>();
 
-        // Primeira camada de folhas — igual a referencia
+        // Primeira camada de folhas
         for (int v = 0; v < V; v++) {
             degree[v] = graph.degree(v);
             if (degree[v] <= 1) {
@@ -240,7 +240,7 @@ public class TreeIsomorphism {
                         newLeaves.add(neighbor);
                     }
                 }
-                degree[node] = 0;   // marca como processado — igual a referencia
+                degree[node] = 0;   // marca como processado
             }
             processedLeaves += newLeaves.size();
             leaves = newLeaves;

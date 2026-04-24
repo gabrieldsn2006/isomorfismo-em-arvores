@@ -24,14 +24,10 @@ public class Main {
         Graph tree2 = new Graph(new In(args[1]));
 
         // ── Lista de adjacência ─────────────────────────────────────────────
-        StdOut.println("============================================================");
-        StdOut.println(" ARVORE 1: " + args[0]);
-        StdOut.println("============================================================");
+        StdOut.println("ARVORE 1: " + args[0]);
         StdOut.println(tree1);
 
-        StdOut.println("============================================================");
-        StdOut.println(" ARVORE 2: " + args[1]);
-        StdOut.println("============================================================");
+        StdOut.println("ARVORE 2: " + args[1]);
         StdOut.println(tree2);
 
         // ── Criação dos objetos de análise ──────────────────────────────────
@@ -39,70 +35,60 @@ public class Main {
         TreeIsomorphism analysis2 = new TreeIsomorphism(tree2);
 
         // ── Validação ───────────────────────────────────────────────────────
-        StdOut.println("============================================================");
-        StdOut.println(" VALIDACAO DAS ENTRADAS");
-        StdOut.println("============================================================");
-        StdOut.println("Arvore 1: " + analysis1.getValidationMessage());
-        StdOut.println("Arvore 2: " + analysis2.getValidationMessage());
+        StdOut.println("VALIDACAO DAS ENTRADAS:");
+        StdOut.println("> Arvore 1: " + analysis1.getValidationMessage());
+        StdOut.println("> Arvore 2: " + analysis2.getValidationMessage());
         StdOut.println();
 
         if (!analysis1.isTree()) {
-            StdOut.println("[ERRO] A entrada 1 nao representa uma arvore valida.");
+            StdOut.println("\u001B[31m[ERRO] A entrada 1 nao representa uma arvore valida.\u001B[0m");
             StdOut.println("Comparacao interrompida.");
             return;
         }
 
         if (!analysis2.isTree()) {
-            StdOut.println("[ERRO] A entrada 2 nao representa uma arvore valida.");
+            StdOut.println("\u001B[31m[ERRO] A entrada 2 nao representa uma arvore valida.\u001B[0m");
             StdOut.println("Comparacao interrompida.");
             return;
         }
 
         // ── Centros ─────────────────────────────────────────────────────────
-        StdOut.println("============================================================");
-        StdOut.println(" CENTROS");
-        StdOut.println("============================================================");
+        StdOut.println("CENTROS:");
 
         int[] centers1 = analysis1.getCenters();
         int[] centers2 = analysis2.getCenters();
 
-        StdOut.print("Arvore 1 - centro(s): ");
+        StdOut.print("> Arvore 1 - centro(s): ");
         printArray(centers1);
 
-        StdOut.print("Arvore 2 - centro(s): ");
+        StdOut.print("> Arvore 2 - centro(s): ");
         printArray(centers2);
 
         StdOut.println();
 
         // ── Codificação canônica ────────────────────────────────────────────
-        StdOut.println("============================================================");
-        StdOut.println(" CODIFICACAO CANONICA");
-        StdOut.println("============================================================");
+        StdOut.println("CODIFICACAO CANONICA:");
 
         String code1 = analysis1.getCanonicalEncoding();
         String code2 = analysis2.getCanonicalEncoding();
 
-        StdOut.println("Arvore 1: " + code1);
-        StdOut.println("Arvore 2: " + code2);
+        StdOut.println("> Arvore 1: " + code1);
+        StdOut.println("> Arvore 2: " + code2);
         StdOut.println();
 
         // ── Veredito final ──────────────────────────────────────────────────
-        StdOut.println("============================================================");
-        StdOut.println(" VEREDITO FINAL");
-        StdOut.println("============================================================");
+        StdOut.println("VEREDITO FINAL:");
 
         if (code1.equals(code2)) {
-            StdOut.println("As duas arvores SAO ISOMORFAS.");
-            StdOut.println("Justificativa: ambas produziram a mesma codificacao canonica.");
-            StdOut.println("  Codigo: " + code1);
+            StdOut.println("> As duas arvores \u001B[34mSAO ISOMORFAS\u001B[0m.");
+            StdOut.println("> Justificativa: ambas produziram a mesma codificacao canonica.");
+            StdOut.println("> Codigo: " + code1);
         } else {
-            StdOut.println("As duas arvores NAO SAO ISOMORFAS.");
-            StdOut.println("Justificativa: as codificacoes canonicas sao diferentes.");
-            StdOut.println("  Codigo 1: " + code1);
-            StdOut.println("  Codigo 2: " + code2);
+            StdOut.println("> As duas arvores \u001B[31mNAO SAO ISOMORFAS\u001B[0m.");
+            StdOut.println("> Justificativa: as codificacoes canonicas sao diferentes.");
+            StdOut.println("> Codigo 1: " + code1);
+            StdOut.println("> Codigo 2: " + code2);
         }
-
-        StdOut.println("============================================================");
     }
 
     /** Imprime um array de inteiros no formato { a, b, ... } */
